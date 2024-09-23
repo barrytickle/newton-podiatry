@@ -1,0 +1,17 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "theme";
+@import "tailwindcss/utilities";
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+body.admin-bar {
+  max-height: calc(100vh - 32px);
+}
+
+.container {
+  @apply px-4 md:px-0;
+}
+
+.components-notice-list {
+  display: none !important;
+}

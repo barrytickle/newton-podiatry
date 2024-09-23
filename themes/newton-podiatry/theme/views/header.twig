@@ -1,0 +1,75 @@
+<div class="md:pb-8 mb-10 relative z-[999]" data-block="main-navigation">
+<div class="w-full flex flex-col lg:flex-row justify-end lg:container mx-auto px-4">
+    <div class="w-full lg:w-[fit-content] flex flex-col lg:flex-row lg:justify-end lg:h-[50px] lg:items-center border-b-[0.5px] border-brand-grey mb-5 pl-2"> 
+        <span class="flex items-center mb-4 lg:mb-0 text-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18.799" height="25" viewBox="0 0 18.799 25">
+                <path id="Path_1" data-name="Path 1" d="M15.7,12.2a29.908,29.908,0,0,1-2.081,3.911,67.659,67.659,0,0,1-4.22,6,68.391,68.391,0,0,1-4.22-6A29.908,29.908,0,0,1,3.1,12.2,7.9,7.9,0,0,1,2.35,9.4a7.049,7.049,0,1,1,14.1,0A7.9,7.9,0,0,1,15.7,12.2ZM10.56,24.438C13.071,21.3,18.8,13.678,18.8,9.4A9.4,9.4,0,1,0,0,9.4c0,4.279,5.728,11.9,8.239,15.039A1.479,1.479,0,0,0,10.56,24.438Z" fill="#0054a2"/>
+            </svg>
+            <a href="#" class="ml-4 hover:underline">152B The Elms, High Street, Newton-le-Willows, WA12 9SG</a>
+        </span>
+
+        <span class="flex items-center mb-4 lg:mb-0 lg:ml-10 text-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24.995" height="25" viewBox="0 0 24.995 25">
+                <path id="Path_2" data-name="Path 2" d="M18.346,13.446a1.952,1.952,0,0,0-2.28.557l-1.621,1.982a14.968,14.968,0,0,1-5.424-5.424L11,8.945a1.945,1.945,0,0,0,.557-2.28L9.212,1.2A1.949,1.949,0,0,0,7.011.055L1.543,1.226A1.95,1.95,0,0,0,0,3.135H0A21.877,21.877,0,0,0,19.533,24.884c.478.049.957.088,1.445.107h0c.3.01.591.02.889.02h0a1.95,1.95,0,0,0,1.909-1.543L24.952,18a1.949,1.949,0,0,0-1.142-2.2l-5.468-2.343Zm3.207,9.217A19.533,19.533,0,0,1,2.348,3.452l4.843-1.04,2.1,4.9L7.538,8.749A2.343,2.343,0,0,0,7,11.737a17.281,17.281,0,0,0,6.278,6.278,2.343,2.343,0,0,0,2.988-.542L17.7,15.721l4.9,2.1ZM2.343,3.135Z" transform="translate(0 -0.011)" fill="#0054a2"/>
+            </svg>
+            <a href="#" class="ml-4 hover:underline">01925 967374</a>
+        </span>
+
+        <span class="flex items-center mb-4 lg:mb-0 lg:ml-10 text-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26.667" height="20" viewBox="0 0 26.667 20">
+                <path id="Path_3" data-name="Path 3" d="M3.333,81.5a.836.836,0,0,1-.833-.833V79.516l8.984-7.375a2.913,2.913,0,0,1,3.7,0l8.979,7.375v1.151a.836.836,0,0,1-.833.833ZM2.5,76.281V67.333a.836.836,0,0,1,.833-.833h20a.836.836,0,0,1,.833.833v8.948l-7.4-6.073a5.417,5.417,0,0,0-6.875,0ZM0,80.667A3.336,3.336,0,0,0,3.333,84h20a3.336,3.336,0,0,0,3.333-3.333V67.333A3.336,3.336,0,0,0,23.333,64h-20A3.336,3.336,0,0,0,0,67.333Z" transform="translate(26.667 84) rotate(180)" fill="#0054a2"/>
+            </svg>
+            <a href="#" class="ml-4 hover:underline">
+                admin@newtonpod.com
+            </a>
+        </span>
+    </div>  
+</div>
+<header class="container mx-auto flex items-center justify-between px-4 lg:px-0">
+    <a href="/">
+        <img src="{{ theme_uri }}/assets/images/logo.svg" class="w-[307px] hidden md:block lg:hidden xl:block" alt="Newton Podiatry Logo">
+        <img src="{{ theme_uri }}/assets/images/logo-condensed.svg" class="w-14 md:hidden lg:block xl:hidden" alt="Newton Podiatry Logo">
+    </a>
+    <nav class="js-mobile-nav hidden lg:flex flex-col lg:flex-row justify-center items-center fixed top-0 left-0 h-full w-full lg:static lg:h-auto lg:w-auto bg-brand-grey-light lg:bg-transparent lg:justify-between overflow-y-auto">
+        {% for item in headerMenu['tier1'] %}
+            {% if item.ID in headerMenu['tier2']|keys %}
+                <div class="js-has-dropdown  items-center h-[50px] lg:h-auto lg:mr-8 px-4 pr-0 lg:py-0 w-full lg:w-auto border-b-[0.5px] border-brand-grey lg:border-0 flex justify-between lg:flex">
+                    <a href="{{ item.url }}">{{ item.title }}</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="h-[50px] p-4 w-[50px] lg:h-4 lg:w-4 lg:p-0 cursor-pointer  border-l-[0.5px] border-brand-grey lg:border-0 lg:ml-3 transition-all ">
+                        <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
+                    </svg>
+                    <nav class="js-dropdown hidden fixed top-0 lg:left-1/2 lg:-translate-x-1/2 lg:shadow-md left-0 h-full w-full lg:h-auto lg:min-h-[250px] lg:border-[0.5px] border-brand-grey bg-brand-grey-light lg:bg-white lg:w-lvh lg:w-[968px] overflow-y-auto flex-col items-center justify-center lg:container lg:py-4 rounded-[5px]">
+                        <div class="lg:columns-3 w-full pt-8 h-lvh lg:pt-0 overflow-y-auto lg:h-auto lg:overflow-y-visible lg:px-8">
+                            <div class="js-dropdown-go-back flex items-center lg:hidden p-4 cursor-pointer">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-brand-blue mr-5 cursor-pointer" style="transform:rotate(180deg)">
+                                    <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/>
+                                </svg>
+                                <span>Go Back</span>
+                            </div>
+                            {% for subItem in headerMenu['tier2'][item.ID] %}
+                                <a href="{{ subItem.url }}" class="h-[50px] flex hover:underline items-center lg:h-auto lg:mr-8 px-4 lg:py-0 border-b-[0.5px] w-full lg:w-auto border-brand-grey lg:border-0 lg:mb-4 text-brand-blue">{{ subItem.title }}</a>
+                            {% endfor %}
+                        </div>
+                    </nav>
+                </div>
+            {% else %}
+                <a href="{{ item.url }}" class="h-[50px] flex items-center lg:h-auto lg:mr-8 px-4 lg:py-0 border-b-[0.5px] w-full lg:w-auto border-brand-grey lg:border-0 hover:underline">{{ item.title }}</a>
+            {% endif %}
+        {% endfor %}
+    </nav>
+    {% include './components/button/solid.twig' with {text: "Book an appointment", url: "/book-now"} %}
+</header> 
+
+<button class="border-0 h-16 w-16 js-mobile-menu-toggle lg:hidden bg-brand-blue fixed bottom-2 right-2 z-50 rounded-full flex justify-center items-center">
+    <span class="js-mobile-menu-open">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="fill-white h-8 w-8">
+            <path  d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
+        </svg>
+    </span>
+    <span class="js-mobile-menu-close hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="fill-white h-8 w-8">
+            <path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/>
+        </svg>
+    </span>
+</button>
+</div>

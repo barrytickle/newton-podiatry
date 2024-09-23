@@ -1,0 +1,29 @@
+<section data-block="hero-with-image" class="flex flex-col justify-center items-center">
+    <div class="container">
+        <div class="flex md:justify-between md:items-center flex-col lg:flex-row">
+            <div class="pt-8 lg:pt-0 w-full lg:w-1/2 max-w-[550px]" >
+                <span class="text-brand-blue">{{fields.subtitle}}</span>
+                <h1 class="text-4xl md:text-6xl font-semibold mb-4">{{fields.title}}</h1>
+                <p class="js-intro-text">{{fields.intro_text}}</p>
+                <div class="flex justify-center lg:justify-start mt-8">
+                {% for item in fields.buttons %}
+                    <div class="mr-4">
+                        {% set button = item.button %}
+                        {% if button.style == 'solid' %}
+                            {% include './components/button/solid.twig' with {text: button.text, url: button.url.url} %}
+                        {% else %}
+                            {% include './components/button/arrow.twig' with {text: button.text, url: button.url.url} %}
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="pt-8 md:pt-0 md:mt-8 lg:mt-0 w-full lg:w-1/2 max-w-[670px] relative">
+            <img src="{{fields.hero_image.url}}" alt="{{fields.hero_image.alt}}" class="w-full h-auto relative z-20">
+            <div class="hidden md:flex absolute -top-6 -right-6 bg-brand-blue h-[150px] w-[150px]  justify-center items-center z-10"></div>
+            <div class="hidden md:flex absolute bottom-0 left-0 z-20" >
+                <img src="{{ theme_uri }}/assets/images/logo-condensed.svg" class="w-[150px]" alt="Newton Podiatry Logo">
+            </div>
+        </div>
+    </div>
+</section>
