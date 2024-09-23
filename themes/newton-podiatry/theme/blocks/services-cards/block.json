@@ -1,0 +1,15 @@
+{
+  "apiVersion": 2,
+  "name": "acf/services-cards",
+  "title": "Services Cards Slider",
+  "description": "",
+  "category": "custom",
+  "acf": {
+    "mode": "preview",
+    "renderCallback": "acf_block_render_callback"
+  },
+  "supports": {
+    "align": false,
+    "jsx": false
+  }
+}

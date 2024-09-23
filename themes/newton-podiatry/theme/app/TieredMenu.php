@@ -5,7 +5,6 @@ use Timber\Site;
 Class TieredMenu extends Site {
     public function generate_tiers($current_menu) {
         $menu_array = wp_get_nav_menu_items($current_menu);
-        if(empty($menu_array)) return [];
         $tiers = array(
             'tier1' => array_filter($menu_array, function($item) {
                 return $item->menu_item_parent == 0;

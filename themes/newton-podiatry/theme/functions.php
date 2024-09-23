@@ -40,8 +40,9 @@ class Timberland extends Timber\Site {
 		$locations = get_nav_menu_locations();
 		if(!empty($locations['header-menu'])){
 			$menu_id = $locations['header-menu'];
+		}else{
+			$menu_id = [];
 		}
-		$menu_id = [];
 		$menu = new TieredMenu();
 		$context['headerMenu'] = $menu->generate_tiers($menu_id);
 

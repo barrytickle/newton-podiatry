@@ -5,7 +5,7 @@ class HeroWithImage {
     this.resizeHero = this.resizeHero.bind(this);
 
     this.init();
-  }
+  } 
 
   resizeHero() {
     const hero = document.querySelector('[data-block="hero-with-image"]');
@@ -19,7 +19,7 @@ class HeroWithImage {
         document.querySelector('[data-block="hero-with-image"] .js-intro-text')
           .offsetHeight
     ) {
-      hero.style.height = `${window.innerHeight - navHeight - 20}px`;
+      hero.style.height = `${window.innerHeight - navHeight - 60}px`;
     } else {
       hero.removeAttribute("style");
     }
