@@ -10,6 +10,7 @@ require dirname( __DIR__ ) . '/theme/app/custom-post-types.php';
 require dirname( __DIR__ ) . '/theme/app/custom-menus.php';
 require dirname( __DIR__ ) . '/theme/app/custom-functions.php';
 require dirname( __DIR__ ) . '/theme/app/TieredMenu.php';
+require dirname( __DIR__ ) . '/theme/app/helper-functions.php';
 
 
 
@@ -32,10 +33,15 @@ class Timberland extends Timber\Site {
 		parent::__construct();
 	}
 
+	
+
 	public function add_to_context( $context ) {
 		$context['site'] = $this;
 		$context['menu'] = Timber::get_menu();
 		$context['header_menu'] = Timber::get_menu('header-menu'); // Fetch the menu as an object
+		$context['current_url'] = get_permalink();
+		$context['booking_url'] = find_page_by_keyword('book');
+		$context['contact_page_url'] = find_page_by_keyword('contact');
 
 		$locations = get_nav_menu_locations();
 		if(!empty($locations['header-menu'])){
@@ -43,10 +49,13 @@ class Timberland extends Timber\Site {
 		}else{
 			$menu_id = [];
 		}
+
 		$menu = new TieredMenu();
 		$context['headerMenu'] = $menu->generate_tiers($menu_id);
 
 		$context['theme_uri'] = get_template_directory_uri();
+		$context['option'] = get_fields('option');
+
 
 		// Require block functions files
 		foreach ( glob( __DIR__ . '/blocks/*/functions.php' ) as $file ) {

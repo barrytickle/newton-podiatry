@@ -7,7 +7,8 @@ console.log(document.querySelector('.servicesCards'))
 
 
 const swiper = new Swiper(".servicesCards", {
-    // pagination: {
-    //   el: ".swiper-pagination",
-    // },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    },
   });

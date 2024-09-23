@@ -1,7 +1,7 @@
-<section class="container mx-auto" data-block="services-cards">
-    <div class="flex justify-between">
-        <h2 class="text-6xl font-semibold w-1/2 flex items-center pl-10">{{ fields.title }}</h2>
-        <div class="flex flex-col p-10 w-1/2 text-lg pr-16">
+<section class="container mx-auto pb-8" data-block="services-cards">
+    <div class="flex justify-between flex-col md:flex-row">
+        <h2 class="text-5xl md:text-6xl font-semibold md:w-1/2 flex items-center md:pl-10">{{ fields.title }}</h2>
+        <div class="flex flex-col pt-10 md:p-10 md:w-1/2 text-lg md:pr-16">
             <p>{{fields.description }}</p>
             {% include 'components/button/arrow.twig' with {
                 'text': 'View All Services',
@@ -10,12 +10,12 @@
         </div>
     </div>
     <div class="swiper servicesCards">
-         <div class="swiper-wrapper">
+         <div class="swiper-wrapper mb-10 ">
             {% for service_group in services %}
                 <div class="swiper-slide">
-                    <div class="flex justify-between flex-wrap items-stretch">
+                    <div class="flex justify-between flex-col md:flex-row flex-wrap items-stretch">
                         {% for service in service_group %}
-                            <div class="w-1/2 p-4">
+                            <div class="md:w-1/2 py-4 md:p-4 ">
                                 <div class="bg-brand-grey-light p-10 min-h-[230px] flex flex-col justify-center ">
                                     <h3 class="text-2xl font-semibold">{{ service.title }}</h3>
                                     <p class="max-w-[400px] my-2">{{get_custom_excerpt(service)}}</p>
@@ -29,9 +29,10 @@
                         {% endfor %}
                     </div>
                 </div>
-
             {% endfor %}
               
         </div>
+        <div class="swiper-pagination"></div>
+
     </div>
 </section>

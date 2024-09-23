@@ -1,0 +1,46 @@
+{% set service_options = option.service_configuation %}
+{% set current_service = option.service_configuation|filter(option => option.service == current_url) %}
+
+{% extends "base.twig" %}
+
+{% block content %}
+    <section class="container mx-auto service-page flex justify-between">
+        <article class="w-full">
+            <nav>
+                <ul class="flex">
+                    <li class="mr-2 text-brand-blue hover:underline"><a href="/services/">Services</a>  </li>
+                    <li> -> </li>
+                    <li class="ml-2 text-brand-blue hover:underline"><a href="#">{{post.title}}</a></li>
+                </ul>
+            </nav>
+            <h1 class="text-6xl font-semibold pt-10">{{ post.title }}</h1>
+            {% if current_service is not empty %}
+                {% set current_service = current_service|first %}
+
+                <div class="bg-brand-blue text-white p-4 my-6 w-fit">
+                    <span> Starting from £{{current_service.price_min}}</span>
+                </div>
+
+            {% endif %} 
+            <div class="flex">
+                <div class="max-w-[900px] mr-24">
+                    {{ post.content }}
+                </div>
+                <aside class="max-w-[300px] pr-4">
+                    <div class="bg-brand-blue text-white p-8 mb-6 w-fit flex flex-col items-between">
+                        <span class="mb-6 text-lg">Can't find what you're looking for?</span>
+                        {% include './components/button/arrow.twig' with {text: 'Get in touch', url: contact_page_url, theme:'white', size: 'lg'} %}
+                    </div>
+
+                    <div class="bg-brand-blue-light text-white p-8 my-6 w-fit flex flex-col items-between">
+                        <span class="mb-6 text-lg text-brand-blue">Are you ready to get started?</span>
+                        {% include './components/button/arrow.twig' with {text: 'Book Online', url: booking_url, size: 'lg'} %}
+                    </div>
+
+                </aside>
+            </div>
+            
+        </article>
+       
+    </section>
+{% endblock %}

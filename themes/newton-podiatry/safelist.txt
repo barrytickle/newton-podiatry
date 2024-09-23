@@ -13,4 +13,7 @@ border-brand-blue-light
 border-brand-grey-light
 border-white
 
+fill-white
+fill-brand-blue 
+
 rotate-180

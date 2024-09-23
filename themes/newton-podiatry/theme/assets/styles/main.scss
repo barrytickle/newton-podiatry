@@ -15,3 +15,10 @@ body.admin-bar {
 .components-notice-list {
   display: none !important;
 }
+
+
+.service-page{
+  p{
+    @apply text-lg mb-4;
+  }
+}
