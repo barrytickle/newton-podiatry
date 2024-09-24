@@ -134,35 +134,4 @@ function has_acf_fields($acf_fields) {
     return false;
 };
 
-
-function auto_enqueue_assets() {
-    // Get the theme directory path
-    $theme_dir = get_template_directory();
-    $theme_uri = get_template_directory_uri();
-    
-    // Folder paths
-    $css_folder = $theme_dir . '/dist/assets/';
-    $js_folder = $theme_dir . '/dist/assets/';
-
-    // Enqueue all CSS files
-    if (is_dir($css_folder)) {
-        foreach (glob($css_folder . '*.css') as $file) {
-            $file_name = basename($file);
-            wp_enqueue_style('theme-style-' . $file_name, $theme_uri . '/assets/css/' . $file_name);
-        }
-    }
-
-    // Enqueue all JS files
-    if (is_dir($js_folder)) {
-        foreach (glob($js_folder . '*.js') as $file) {
-            $file_name = basename($file);
-            wp_enqueue_script('theme-script-' . $file_name, $theme_uri . '/assets/js/' . $file_name, array(), false, true);
-        }
-    }
-}
-add_action('wp_enqueue_scripts', 'auto_enqueue_assets');
-
-    
-
-
 ?>
