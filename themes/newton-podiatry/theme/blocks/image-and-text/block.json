@@ -1,0 +1,16 @@
+{
+    "apiVersion": 2,
+    "name": "acf/image-and-text",
+    "title": "Image and Text",
+    "description": "",
+    "category": "custom",
+    "acf": {
+      "mode": "preview",
+      "renderCallback": "acf_block_render_callback"
+    },
+    "supports": {
+      "align": false,
+      "jsx": false
+    }
+  }
+  

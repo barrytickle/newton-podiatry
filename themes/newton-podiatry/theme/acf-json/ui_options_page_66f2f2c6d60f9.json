@@ -1,0 +1,22 @@
+{
+    "key": "ui_options_page_66f2f2c6d60f9",
+    "title": "Theme Options",
+    "active": true,
+    "menu_order": 0,
+    "page_title": "Theme Options",
+    "menu_slug": "theme-options",
+    "parent_slug": "none",
+    "advanced_configuration": 1,
+    "icon_url": "dashicons-welcome-widgets-menus",
+    "menu_title": "",
+    "position": "",
+    "redirect": 0,
+    "description": "",
+    "update_button": "Update",
+    "updated_message": "Options Updated",
+    "capability": "edit_posts",
+    "data_storage": "options",
+    "post_id": "",
+    "autoload": 0,
+    "modified": 1727197923
+}

@@ -1,0 +1,16 @@
+<section class="container mx-auto py-16" data-block="image-and-text">
+    <div class="flex flex-wrap justify-center">
+        <div class="w-full lg:w-1/2  max-w-[470px]">
+            <img src="{{ fields.image }}" alt="{{fields.title}} Image" class="w-full h-auto">
+        </div>
+        <div class="w-full lg:w-1/2 md:px-8  ">
+            <h2 class="text-4xl xl:text-5xl font-bold mt-6 md:mt-0 mb-8 ">{{fields.title}}</h2>
+            <p class="text-xl text-gray-800 md:pr-0 xl:pr-32">{{fields.description|nl2br}}</p>
+            <div class="mt-6">
+                {% include './components/button/loop.twig' with {buttons: fields.buttons, size:'lg'} %}
+            </div>
+
+        </div>
+        
+    </div>
+</section>

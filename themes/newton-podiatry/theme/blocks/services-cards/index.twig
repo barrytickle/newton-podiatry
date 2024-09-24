@@ -3,10 +3,12 @@
         <h2 class="text-5xl md:text-6xl font-semibold md:w-1/2 flex items-center md:pl-10">{{ fields.title }}</h2>
         <div class="flex flex-col pt-10 md:p-10 md:w-1/2 text-lg md:pr-16">
             <p>{{fields.description }}</p>
-            {% include 'components/button/arrow.twig' with {
+            <div class="mt-6">
+                {% include 'components/button/arrow.twig' with {
                 'text': 'View All Services',
                 'url': fields.all_services_url,
             } %}
+            </div>
         </div>
     </div>
     <div class="swiper servicesCards">
@@ -19,10 +21,12 @@
                                 <div class="bg-brand-grey-light p-10 min-h-[230px] flex flex-col justify-center ">
                                     <h3 class="text-2xl font-semibold">{{ service.title }}</h3>
                                     <p class="max-w-[400px] my-2">{{get_custom_excerpt(service)}}</p>
+                                    <div class="mt-4">
                                         {% include 'components/button/arrow.twig' with {
-                                        'text': 'Find out More',
-                                        'url': '/' ~ service.post_type ~'/'~ service.slug ~'/',
-                                    } %}
+                                            'text': 'Find out More',
+                                            'url': '/' ~ service.post_type ~'/'~ service.slug ~'/',
+                                        } %}
+                                    </div>
                                     
                                 </div>
                             </div>

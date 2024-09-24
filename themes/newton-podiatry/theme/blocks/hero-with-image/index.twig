@@ -4,18 +4,9 @@
             <div class="pt-8 lg:pt-0 w-full lg:w-1/2 max-w-[580px]" >
                 <span class="text-brand-blue">{{fields.subtitle}}</span>
                 <h1 class="text-4xl md:text-6xl font-semibold mb-4">{{fields.title}}</h1>
-                <p class="js-intro-text">{{fields.intro_text}}</p>
+                <p class="js-intro-text text-lg">{{fields.intro_text}}</p>
                 <div class="flex justify-center lg:justify-start items-center mt-8">
-                {% for item in fields.buttons %}
-                    <div class="mr-4">
-                        {% set button = item.button %}
-                        {% if button.style == 'solid' %}
-                            {% include './components/button/solid.twig' with {text: button.text, url: button.url.url} %}
-                        {% else %}
-                            {% include './components/button/arrow.twig' with {text: button.text, url: button.url.url} %}
-                        {% endif %}
-                    </div>
-                {% endfor %}
+                {% include './components/button/loop.twig' with {buttons: fields.buttons} %}
 
             </div>
         </div>

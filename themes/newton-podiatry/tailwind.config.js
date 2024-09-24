@@ -15,6 +15,20 @@ export default {
     safelist: safelist,
   },
   theme: {
+    container: {
+      center: true, // Ensures the container is centered horizontally
+      padding: {
+        DEFAULT: '2rem', // No padding by default (non-mobile)
+        md: '0rem',      // 1rem padding on mobile (small screens)
+      }, // Optional: adds padding around the container
+      screens: {
+        'sm': '640px',  // Max-width for small screens
+        'md': '768px',  // Max-width for medium screens
+        'lg': '1024px', // Max-width for large screens
+        'xl': '1280px', // Max-width for extra-large screens
+        '2xl': '1350px' // Max-width for 2x-extra-large screens
+      },
+    },
     colors: {
       ...colors, // Include all default Tailwind colors
       "brand-blue": {

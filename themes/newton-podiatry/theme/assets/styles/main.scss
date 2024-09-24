@@ -8,9 +8,9 @@ body.admin-bar {
   max-height: calc(100vh - 32px);
 }
 
-.container {
-  @apply px-4 md:px-0;
-}
+// .container {
+//   @apply px-4 md:px-0;
+// }
 
 .components-notice-list {
   display: none !important;

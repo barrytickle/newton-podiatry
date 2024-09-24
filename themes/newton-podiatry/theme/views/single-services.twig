@@ -4,6 +4,7 @@
 {% extends "base.twig" %}
 
 {% block content %}
+    {# {{dump(option)}} #}
     <section class="container mx-auto service-page flex justify-between">
         <article class="w-full">
             <nav>
@@ -20,22 +21,33 @@
                 <div class="bg-brand-blue text-white p-4 my-6 w-fit">
                     <span> Starting from £{{current_service.price_min}}</span>
                 </div>
-
-            {% endif %} 
-            <div class="flex">
-                <div class="max-w-[900px] mr-24">
+            {% else %}
+                <div class="bg-brand-blue text-white p-4 my-6 w-fit">
+                    <span> {{option.no_price_text}} </span>
+                </div>
+            {% endif  %} 
+            <div class="flex flex-col md:flex-row">
+                <div class="max-w-[500px] lg:max-w-[900px] xl:w-[900px] md:mr-8 lg:mr-24">
                     {{ post.content }}
                 </div>
-                <aside class="max-w-[300px] pr-4">
+                <aside class="max-w-[300px] lg:pr-4">
+                    {% if option.service_boxes[0] %}
+                        {% set box = option.service_boxes[0] %}
                     <div class="bg-brand-blue text-white p-8 mb-6 w-fit flex flex-col items-between">
-                        <span class="mb-6 text-lg">Can't find what you're looking for?</span>
-                        {% include './components/button/arrow.twig' with {text: 'Get in touch', url: contact_page_url, theme:'white', size: 'lg'} %}
+                        <span class="mb-6 text-lg">{{box.box_text}}</span>
+                        {% include './components/button/arrow.twig' with {text: box.buttons['text'], url: box.buttons['url'].url, theme:'white', size: 'lg'} %}
                     </div>
+                    {% endif %}
 
-                    <div class="bg-brand-blue-light text-white p-8 my-6 w-fit flex flex-col items-between">
-                        <span class="mb-6 text-lg text-brand-blue">Are you ready to get started?</span>
-                        {% include './components/button/arrow.twig' with {text: 'Book Online', url: booking_url, size: 'lg'} %}
-                    </div>
+                    {% if option.service_boxes[1] %}
+                        {% set box = option.service_boxes[1] %}
+
+                        <div class="bg-brand-blue-light text-white p-8 my-6 w-fit flex flex-col items-between">
+                            <span class="mb-6 text-lg text-brand-blue">{{box.box_text}}</span>
+                            {% include './components/button/arrow.twig' with {text: box.buttons['text'], url: box.buttons['url'].url, size: 'lg'} %}
+                        </div>
+
+                    {% endif %}
 
                 </aside>
             </div>
