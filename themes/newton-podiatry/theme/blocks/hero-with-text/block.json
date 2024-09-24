@@ -1,0 +1,15 @@
+{
+  "apiVersion": 2,
+  "name": "acf/hero-with-text",
+  "title": "Hero with Text",
+  "description": "",
+  "category": "custom",
+  "acf": {
+    "mode": "preview",
+    "renderCallback": "acf_block_render_callback"
+  },
+  "supports": {
+    "align": false,
+    "jsx": false
+  }
+}

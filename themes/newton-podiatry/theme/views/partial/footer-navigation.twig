@@ -1,0 +1,41 @@
+{% set menu = footerMenu['tier1'] %}
+
+
+
+<div>
+
+    {% for item in menu %}
+        {% set index = loop.index %}
+        {% set continue = false %}
+        {% set title = item.post_title != '' ? item.post_title : item.title %}
+
+        {% if item.url is not empty and 'link-title' in item.url %}
+            {% if index != 0 %}
+                </ul>
+                </div>
+            {% endif %}
+            <div class="mr-12">
+
+            <h3 class="text-3xl mb-6 font-light mt-6 md:mt-0">{{ title }}</h3>
+            
+            <ul>
+
+            {% set continue = true %}
+            
+        {% endif %} 
+            
+            {% if not continue %}
+                {% if item.url %}
+                    <li class="mb-3 text-lg opacity-75 hover:opacity-100 hover:underline transition-all">
+                        <a href="{{ item.url }}">{{ title }}</a>
+                    </li>
+                {% endif %}
+        
+                {% if index == menu|length %}
+                    </ul>
+                    </div>
+                {% endif %}   
+            {% endif %}
+    {% endfor %}
+</div>
+            

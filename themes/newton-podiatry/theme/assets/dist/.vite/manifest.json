@@ -1,0 +1,16 @@
+{
+  "theme/assets/main.js": {
+    "file": "assets/main-eSuuAklt.js",
+    "name": "main",
+    "src": "theme/assets/main.js",
+    "isEntry": true,
+    "css": [
+      "assets/main-B3Qf5L5T.css"
+    ]
+  },
+  "theme/assets/styles/editor-style.css": {
+    "file": "assets/editor-style-BpdpcHP8.css",
+    "src": "theme/assets/styles/editor-style.css",
+    "isEntry": true
+  }
+}

@@ -1,0 +1,21 @@
+.page{
+    p, ul {
+        @apply text-lg mb-4;
+    }
+
+    p{
+        @apply max-w-[800px];
+    }
+
+    ul.wp-block-list{
+        @apply list-disc pl-4;
+    }
+
+    h2{
+        @apply text-3xl font-semibold mt-8 mb-4;
+
+        strong{
+            font-weight: inherit;
+        }
+    }
+}

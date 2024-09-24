@@ -7,6 +7,7 @@
                 </svg>
                 <a href="{{option.google_maps_url == "" ? "#" : option.google_maps_url}}" class="ml-4 hover:underline">{{option.address}}</a>
             </span>
+            
 
             <span class="flex items-center mb-4 lg:mb-0 lg:ml-10 text-sm">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24.995" height="25" viewBox="0 0 24.995 25">
@@ -27,8 +28,8 @@
     </div>
     <header class="container mx-auto flex items-center justify-between px-4 lg:px-0 sticky">
         <a href="/">
-            <img src="{{ theme_uri }}/assets/images/logo.svg" class="w-[307px] hidden md:block lg:hidden xl:block" alt="Newton Podiatry Logo">
-            <img src="{{ theme_uri }}/assets/images/logo-condensed.svg" class="w-14 md:hidden lg:block xl:hidden" alt="Newton Podiatry Logo">
+            <img src="{{option.logos['logo_large']}}" class="w-[307px] hidden md:block lg:hidden xl:block" alt="Newton Podiatry Logo">
+            <img src="{{option.logos['logo_small']}}" class="w-14 md:hidden lg:block xl:hidden" alt="Newton Podiatry Logo">
         </a>
         <nav class="js-mobile-nav hidden lg:flex flex-col lg:flex-row justify-center items-center fixed top-0 left-0 h-full w-full lg:static lg:h-auto lg:w-auto bg-brand-grey-light lg:bg-transparent lg:justify-between overflow-y-auto">
             {% for item in headerMenu['tier1'] %}

@@ -1,18 +1,35 @@
-{% set title = option.footer_cta['title'] %}
-{% set cta_text = option.footer_cta['cta_text'] %}
-{% set button = option.footer_cta['button'] %}
+
 
 <section class="bg-primary py-16 my-12" data-block="footer-cta">
-    <div class="container mx-auto flex items-center flex-col md:flex-row md:justify-between pr-12">
-        <h3 class="md:max-w-1/2 my-8 md:py-0 text-white text-5xl max-w-[550px] font-semibold">{{title}}</h3>
-        <div class="flex flex-col">
-            <p class="text-[rgba(255,255,255,0.75)] text-xl max-w-[600px]">{{cta_text}}</p>
-            <div class="mt-6">
-                {% include './components/button/arrow.twig' with {text: button.text, url:button.url.url, theme:"white", size:"lg"} %}
-            </div>
-        </div>
-    </div>
+    {% include './partial/footer-cta.twig' %}
 </section>
 <footer>
-    
+    <div class="container flex flex-col md:flex-row">
+        <div class="flex flex-col justify-between md:mr-22 lg:mr-32">
+            <div class="w-full" >
+                <img src="{{option.logos['logo_large']}}" class="w-full max-w-[350px]" alt="Newton Podiatry Logo">
+                <p class="mt-4 opacity-75">{{option.footer_message}}</p>
+                <div class="flex flex-wrap mt-3 flex-col md:flex-row">
+                    {% for social in option.social_media %}
+                        <a href="{{social.url == "" ? "#" : social.url}} " class="mr-4">
+                            <img src="{{social.icon}}" alt="Newton Podiatry {{social.name}}" class="w-8 h-8">
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="flex flex-wrap mt-8 pb-2">
+                {% for image in option.healthcare_logos %}
+                    {% set image = image.image %}
+                    <img src="{{image.url}}" class="h-12 mr-4 mb-4" alt="{{image.title == "" ? "Healthcare logo" : image.title}}">
+                {% endfor %}
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row">
+            {% include './partial/footer-navigation.twig' %}
+        </div>
+    </div>
+    <div class="container border-t-[0.5px] border-brand-grey py-4 flex flex-col md:flex-row md:justify-between md:items-center mt-4">
+        <span class="text-sm opacity-75 ">Made with ❤️ by <a href="https://barrytickle.com" target="_blank" class="hover:underline text-brand-blue" >Barry Tickle</a></span>
+        <p class="text-sm opacity-75 mt-6 md:mt-0">© {{ 'now' | date('Y') }}  Newton Podiatry, All Rights Reserved.</p>
 </footer>

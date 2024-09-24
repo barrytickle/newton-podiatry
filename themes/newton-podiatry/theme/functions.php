@@ -4,6 +4,7 @@
  * @subpackage Timberland
  * @since Timberland 2.1.0
  */
+use Timber\Post;
 
 require_once dirname( __DIR__ ) . '/vendor/autoload.php';
 require dirname( __DIR__ ) . '/theme/app/custom-post-types.php';
@@ -36,12 +37,16 @@ class Timberland extends Timber\Site {
 	
 
 	public function add_to_context( $context ) {
+
+		global $post; 
+
 		$context['site'] = $this;
 		$context['menu'] = Timber::get_menu();
 		$context['header_menu'] = Timber::get_menu('header-menu'); // Fetch the menu as an object
 		$context['current_url'] = get_permalink();
 		$context['booking_url'] = find_page_by_keyword('book');
 		$context['contact_page_url'] = find_page_by_keyword('contact');
+		$context['site_header_title'] = custom_dynamic_page_title();
 
 		$locations = get_nav_menu_locations();
 		if(!empty($locations['header-menu'])){
@@ -52,15 +57,21 @@ class Timberland extends Timber\Site {
 
 		$menu = new TieredMenu();
 		$context['headerMenu'] = $menu->generate_tiers($menu_id);
+		$context['footerMenu'] = $menu->generate_tiers($locations['footer-menu']);
 
 		$context['theme_uri'] = get_template_directory_uri();
 		$context['option'] = get_fields('option');
+		$context['content'] = $post->post_content;
 
 
 		// Require block functions files
 		foreach ( glob( __DIR__ . '/blocks/*/functions.php' ) as $file ) {
 			require_once $file;
 		}
+
+
+		// Create a function to check if any ACF field contains the word "hero"
+		$context['has_hero_in_acf'] = has_acf_fields($post->post_content);
 
 		return $context;
 	}
@@ -177,6 +188,7 @@ new Timberland();
 
 
 function acf_block_render_callback( $block, $content = '' ) {
+
     $context           = Timber::context();
     $context['post']   = Timber::get_post();
     $context['block']  = $block;
