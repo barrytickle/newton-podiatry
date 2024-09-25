@@ -1,0 +1,21 @@
+<section class="bg-brand-grey-light py-12 w-full relative before:content-[''] before:block before:h-full before:absolute before:top-0 before:-left-[100vw] before:w-[250vw] before:bg-brand-grey-light before:-z-[1]" data-block="featured-testimonial">
+    <div class="container">
+        <div class="flex flex-col md:flex-row justify-between">
+            <div class="flex flex-col mb-6 md:mb-0">
+                <h2 class="text-3xl font-semibold text-brand-blue !my-0 !mb-6">{{fields.title}}</h2>
+                <p class="text-lg !max-w-[440px] block">{{fields.sub_text}}</p>
+                {% include './components/button/single.twig' with {button: fields.button} %}
+            </div>
+
+            <div class="flex flex-col">
+                <div class="flex mb-4">
+                    {% for i in 1..fields.star_rating %}
+                        <img src="{{fields.testimonial_icon}}" class="w-8 h-8 mr-2"/>
+                    {% endfor %}    
+                </div>
+                <p class="text-lg block !max-w-[600px]">{{fields.testimonial_text}}</p>
+                <span class="text-lg block !max-w-[600px]">- {{fields.testimonial_author}}</span>
+            </div>
+        </div>
+    </div>
+</section>  

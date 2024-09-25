@@ -2,10 +2,11 @@
 {% set cta_text = option.footer_cta['cta_text'] %}
 {% set button = option.footer_cta['button'] %}
 
+
 <div class="container mx-auto flex items-center flex-col md:flex-row md:justify-between pr-12">
     <h3 class="md:max-w-1/2 my-8 md:py-0 text-white text-5xl max-w-[550px] font-semibold">{{title}}</h3>
     <div class="flex flex-col">
-        <p class="text-[rgba(255,255,255,0.75)] text-xl max-w-[600px]">{{cta_text}}</p>
+        <p class="text-[rgba(255,255,255,0.75)] text-xl !max-w-[600px]">{{cta_text}}</p>
         <div class="mt-6">
             {% include './components/button/arrow.twig' with {text: button.text, url:button.url.url, theme:"white", size:"lg"} %}
         </div>

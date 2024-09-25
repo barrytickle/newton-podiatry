@@ -34,8 +34,6 @@ class Timberland extends Timber\Site {
 		parent::__construct();
 	}
 
-	
-
 	public function add_to_context( $context ) {
 
 		global $post; 
@@ -79,6 +77,7 @@ class Timberland extends Timber\Site {
 	public function add_to_twig( $twig ) {
 		return $twig;
 	}
+
 
 	public function theme_supports() {
 		add_theme_support( 'automatic-feed-links' );

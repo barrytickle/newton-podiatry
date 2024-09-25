@@ -1,0 +1,7 @@
+ {% if button %}
+    {% if button.style == "solid" %}
+        {% include './components/button/solid.twig' with {text: fields.button.text, url: fields.button.url.url, size: size ? size :  "", theme: theme ? "" } %}
+    {% else %}
+        {% include './components/button/arrow.twig' with {text: fields.button.text, url: fields.button.url.url, size: size ? size :  "", theme: theme ? ""} %}
+    {% endif %}
+{% endif %}
