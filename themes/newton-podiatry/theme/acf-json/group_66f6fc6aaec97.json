@@ -1,13 +1,13 @@
 {
-    "key": "group_66f3174c19e0d",
-    "title": "Config - Testimonials",
+    "key": "group_66f6fc6aaec97",
+    "title": "Block - Featured Testimonial Grid",
     "fields": [
         {
-            "key": "field_66f3174c401b9",
-            "label": "Date",
-            "name": "date",
+            "key": "field_66f6fc6be9fcd",
+            "label": "Message",
+            "name": "",
             "aria-label": "",
-            "type": "date_picker",
+            "type": "message",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,29 +16,28 @@
                 "class": "",
                 "id": ""
             },
-            "display_format": "d - m - Y",
-            "return_format": "d\/m\/Y",
-            "first_day": 1,
-            "allow_in_bindings": 1
+            "message": "This will gather all your testimonials from the Testimonials posts.",
+            "new_lines": "wpautop",
+            "esc_html": 0
         }
     ],
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "block",
                 "operator": "==",
-                "value": "testimonials"
+                "value": "acf\/featured-testimonial-grid"
             }
         ]
     ],
     "menu_order": 0,
-    "position": "side",
+    "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "show_in_rest": 1,
-    "modified": 1727463033
+    "show_in_rest": 0,
+    "modified": 1727462549
 }

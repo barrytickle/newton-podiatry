@@ -1,0 +1,23 @@
+<section class="my-6" data-block="featured-testimonials-grid">
+    <div class="flex flex-wrap mb-4 flex-col md:flex-row">
+        {% for testimonial in testimonials %}
+            {% set first_letter = testimonial.title|first %}
+
+            <div class="flex flex-col w-full md:w-1/2 px-6 mt-6">
+                <div class="flex items-center ">
+                    <div class="h-[40px] flex justify-center items-center w-[40px] rounded-full bg-brand-blue text-white text-xl">
+                        {{first_letter}}
+                    </div>
+                    <div class="flex-col flex ml-3">
+                        <span class="font-bold text-sm">{{testimonial.title}}</span>
+                        <span class="mt text-sm text-gray-500 text-[11px] font-semibold">{{testimonial.meta('date')}}</span>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <p class="!text-base">{{ testimonial.content|striptags|replace({'“': ''}) }}</p>
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
+</section>

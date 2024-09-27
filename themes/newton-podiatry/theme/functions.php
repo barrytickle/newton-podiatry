@@ -61,12 +61,10 @@ class Timberland extends Timber\Site {
 		$context['option'] = get_fields('option');
 		$context['content'] = $post->post_content;
 
-
 		// Require block functions files
 		foreach ( glob( __DIR__ . '/blocks/*/functions.php' ) as $file ) {
 			require_once $file;
 		}
-
 
 		// Create a function to check if any ACF field contains the word "hero"
 		$context['has_hero_in_acf'] = has_acf_fields($post->post_content);
