@@ -1,0 +1,15 @@
+{
+  "apiVersion": 2,
+  "name": "acf/text-and-form",
+  "title": "Text and Contact Form",
+  "description": "",
+  "category": "custom",
+  "acf": {
+    "mode": "preview",
+    "renderCallback": "acf_block_render_callback"
+  },
+  "supports": {
+    "align": false,
+    "jsx": false
+  }
+}

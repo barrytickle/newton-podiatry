@@ -441,6 +441,42 @@
                     "parent_repeater": "field_66f305f47d577"
                 }
             ]
+        },
+        {
+            "key": "field_66f95506c9697",
+            "label": "Contact",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_66f9550fc9698",
+            "label": "Contact Form URL",
+            "name": "contact_form_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "placeholder": ""
         }
     ],
     "location": [
@@ -461,5 +497,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1727203824
+    "modified": 1727616282
 }

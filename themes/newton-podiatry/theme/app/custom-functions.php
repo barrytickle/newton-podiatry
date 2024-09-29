@@ -2,6 +2,7 @@
 use Timber\Timber;
 use Twig\TwigFunction; // Use the correct namespace for TwigFunction
 use Timber\Post;
+use Symfony\Component\VarDumper\VarDumper;
 
 
 /*
@@ -15,21 +16,15 @@ use Timber\Post;
  */
 
 
-add_filter('timber/twig', 'add_custom_twig_functions');
 
-function add_custom_twig_functions($twig) {
-    // Add dd() to Twig
-    $twig->addFunction(new TwigFunction('dump', function($variable = null) {
-        // Check if a variable was passed, if not use global Timber context
-        if (is_null($variable)) {
-            $variable = Timber::context();
-        }
-        dump($variable);
-        die();
+ add_filter('timber/twig', function( $twig ) {
+    // Add the dump function to Twig
+    $twig->addFunction(new \Twig\TwigFunction('dump', function( $variable ) {
+        VarDumper::dump($variable);
     }));
-
+    
     return $twig;
-}
+});
 
 add_filter('timber/twig', 'add_custom_functions_to_twig');
 
